@@ -27,7 +27,7 @@ public class ControleUsuario {
 	public ResponseEntity<?> cadastrarUsuario(@RequestBody Usuario usuario) {
 		BCryptPasswordEncoder codificador = new BCryptPasswordEncoder();
 		try {
-			// Garantir que um cadastro público receba apenas o perfil CLIENTE por padrão
+
 			if (usuario.getPerfis() == null || usuario.getPerfis().isEmpty()) {
 				usuario.getPerfis().add(Perfil.ROLE_CLIENTE);
 			}
@@ -48,6 +48,6 @@ public class ControleUsuario {
 	@GetMapping("/obter-usuarios")
 	public ResponseEntity<List<Usuario>> obterUsuarios() {
 		List<Usuario> usuarios = repositorio.findAll();
-		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.FOUND);
+		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
 	}
 }

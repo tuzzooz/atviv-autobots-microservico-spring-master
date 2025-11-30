@@ -29,6 +29,6 @@ public class ControleCliente {
 	@PreAuthorize("hasAnyRole('ADMIN','GERENTE','VENDEDOR')")
 	@GetMapping("/obter-clientes")
 	public ResponseEntity<List<Cliente>> obterClientes() {
-		return new ResponseEntity<>(repositorio.findAll(),HttpStatus.FOUND);
+		return new ResponseEntity<>(repositorio.findAll(),HttpStatus.OK);
 	}
 }

@@ -24,7 +24,7 @@ public class AutomanagerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		BCryptPasswordEncoder codificador = new BCryptPasswordEncoder();
-		// Criar usuário administrador
+
 		Usuario admin = new Usuario();
 		admin.setNome("administrador");
 		admin.getPerfis().add(Perfil.ROLE_ADMIN);
@@ -34,7 +34,7 @@ public class AutomanagerApplication implements CommandLineRunner {
 		admin.setCredencial(credAdmin);
 		repositorio.save(admin);
 
-		// Criar usuário gerente
+
 		Usuario gerente = new Usuario();
 		gerente.setNome("gerente");
 		gerente.getPerfis().add(Perfil.ROLE_GERENTE);
@@ -44,7 +44,7 @@ public class AutomanagerApplication implements CommandLineRunner {
 		gerente.setCredencial(credGerente);
 		repositorio.save(gerente);
 
-		// Criar usuário vendedor
+
 		Usuario vendedor = new Usuario();
 		vendedor.setNome("vendedor");
 		vendedor.getPerfis().add(Perfil.ROLE_VENDEDOR);
@@ -54,7 +54,7 @@ public class AutomanagerApplication implements CommandLineRunner {
 		vendedor.setCredencial(credVendedor);
 		repositorio.save(vendedor);
 
-		// Criar usuário cliente
+
 		Usuario cliente = new Usuario();
 		cliente.setNome("cliente");
 		cliente.getPerfis().add(Perfil.ROLE_CLIENTE);
